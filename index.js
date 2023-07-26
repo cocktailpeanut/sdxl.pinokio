@@ -14,19 +14,19 @@ class Automatic1111 {
       let newtext = text.replace(re, `$2"${defaultArgs}"`)
       await fs.promises.writeFile(path.resolve(__dirname, "automatic1111", "webui-user.sh"), newtext)
     } else if (platform === 'win32') {
-      let defaultArgs = "--no-download-sd-model --xformers --api"
+      let defaultArgs = "--no-download-sd-model --xformers --no-half-vae --api"
       let text = await fs.promises.readFile(path.resolve(__dirname, "automatic1111", "webui-user.bat"), "utf8")
       let re = /^(set COMMANDLINE_ARGS=)(.*)$/m
-      let newtext = text.replace(re, `$1"${defaultArgs}"`)
+      let newtext = text.replace(re, `$1${defaultArgs}`)
       await fs.promises.writeFile(path.resolve(__dirname, "automatic1111", "webui-user.bat"), newtext)
     } else {
       // linux
       let defaultArgs
       if (/amd/i.test(vendor)) {
         // lshqqytiger
-        defaultArgs = "--no-download-sd-model --precision full --no-half --xformers --api"
+        defaultArgs = "--no-download-sd-model --precision full --no-half-vae --xformers --api"
       } else {
-        defaultArgs = "--no-download-sd-model --xformers --api"
+        defaultArgs = "--no-download-sd-model --xformers --no-half-vae --api"
       }
       let text = await fs.promises.readFile(path.resolve(__dirname, "automatic1111", "webui-user.sh"), "utf8")
       let re = /^(#?)(export COMMANDLINE_ARGS=)(.+)$/m
