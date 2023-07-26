@@ -59,14 +59,14 @@ module.exports = async (kernel) => {
       "url": "https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors",
       "path": "automatic1111/models/Stable-diffusion/sd_xl_refiner_1.0.safetensors"
     }
-  }, {
-    "method": "fs.download",
-    "params": {
-      //"url": "https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors",
-      //"path": "automatic1111/models/Stable-diffusion/sd_xl_base_0.9.vae.safetensors"
-      "url": "https://huggingface.co/stabilityai/sdxl-vae/blob/main/sdxl_vae.safetensors",
-      "path": "automatic1111/models/Stable-diffusion/sd_xl_base_1.0.vae.safetensors"
-    }
+//  }, {
+//    "method": "fs.download",
+//    "params": {
+//      //"url": "https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors",
+//      //"path": "automatic1111/models/Stable-diffusion/sd_xl_base_0.9.vae.safetensors"
+//      "url": "https://huggingface.co/stabilityai/sdxl-vae/blob/main/sdxl_vae.safetensors",
+//      "path": "automatic1111/models/Stable-diffusion/sd_xl_base_1.0.vae.safetensors"
+//    }
   }, {
     "method": "notify",
     "params": {
