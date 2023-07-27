@@ -7,8 +7,14 @@ class Automatic1111 {
     let graphics = await kernel.system.graphics()
     let platform = os.platform()
     let vendor = graphics.controllers[0].vendor
+    ondata({ raw: `\r\nVendor: ${vendor}\r\n` })
     if (platform === 'darwin') {
-      let defaultArgs = "--no-download-sd-model --skip-torch-cuda-test --upcast-sampling --use-cpu interrogate --no-half --api"
+      let defaultArgs
+      if (/apple/i.test(vendor)) {
+        defaultArgs = "--no-download-sd-model --skip-torch-cuda-test --upcast-sampling --use-cpu interrogate --no-half --api"
+      } else {
+        defaultArgs = "--no-download-sd-model --skip-torch-cuda-test --upcast-sampling --use-cpu all --no-half --api"
+      }
       let text = await fs.promises.readFile(path.resolve(__dirname, "automatic1111", "webui-user.sh"), "utf8")
       let re = /^(#?)(export COMMANDLINE_ARGS=)(.+)$/m
       let newtext = text.replace(re, `$2"${defaultArgs}"`)
