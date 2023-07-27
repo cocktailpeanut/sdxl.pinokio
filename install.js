@@ -37,11 +37,10 @@ module.exports = async (kernel) => {
   let run = setup.concat([{
     "uri": "./index.js",
     "method": "config",
-    "notify": true
   }, {
     "method": "notify",
     "params": {
-      "html": "Downloading the Stable Diffusion XL 1.0 model..."
+      "html": "<b>Downloading Model</b><br>Downloading the Stable Diffusion XL 1.0 model..."
     }
   }, {
     "method": "fs.download",
@@ -70,7 +69,7 @@ module.exports = async (kernel) => {
   }, {
     "method": "notify",
     "params": {
-      "html": "All SDXL 1.0 models downloaded successfully. Now setting up Automatic1111/stable-diffusion-webui..."
+      "html": "<b>Installing webui</b><br>All SDXL 1.0 models downloaded successfully. Now setting up Automatic1111/stable-diffusion-webui..."
     }
   }, {
     "method": "shell.start",
