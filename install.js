@@ -38,17 +38,17 @@ module.exports = async (kernel) => {
     "uri": "./index.js",
     "method": "config",
   }, {
-    "method": "notify",
-    "params": {
-      "html": "<b>Downloading Model</b><br>Downloading the Stable Diffusion XL 1.0 model..."
-    }
-  }, {
     "method": "self.set",
     "params": {
       "automatic1111/ui-config.json": {
         "txt2img/Width/value": 1024,
         "txt2img/Height/value": 1024,
       }
+    }
+  }, {
+    "method": "notify",
+    "params": {
+      "html": "<b>Downloading Model</b><br>Downloading the Stable Diffusion XL 1.0 model..."
     }
   }, {
     "method": "fs.download",
