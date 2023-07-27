@@ -24,11 +24,13 @@ module.exports = async (kernel) => {
         "session.json": {
           "url": "{{input}}"
         }
-      }, {
-        method: "browser.open",
-        params: {
-          uri: "/?selected=Stable Diffusion web UI"
-        }
+
+      }
+    }, {
+      method: "browser.open",
+      params: {
+        uri: "/?selected=Stable Diffusion web UI"
+      }
 //    }, {
 //      method: "notify",
 //      params: {
