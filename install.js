@@ -103,7 +103,7 @@ module.exports = async (kernel) => {
   }, {
     "method": "browser.open",
     "params": {
-      "uri": "/"
+      "uri": "/?selected=Stable Diffusion web UI"
     }
   }])
   return { run }

@@ -8,7 +8,7 @@ class Automatic1111 {
     let platform = os.platform()
     let vendor = graphics.controllers[0].vendor
     if (platform === 'darwin') {
-      let defaultArgs = "--no-download-sd-model --skip-torch-cuda-test --upcast-sampling --use-cpu interrogate --no-half --xformers --api"
+      let defaultArgs = "--no-download-sd-model --skip-torch-cuda-test --upcast-sampling --use-cpu interrogate --no-half --api"
       let text = await fs.promises.readFile(path.resolve(__dirname, "automatic1111", "webui-user.sh"), "utf8")
       let re = /^(#?)(export COMMANDLINE_ARGS=)(.+)$/m
       let newtext = text.replace(re, `$2"${defaultArgs}"`)

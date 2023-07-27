@@ -19,10 +19,17 @@ module.exports = async (kernel) => {
         }]
       }
     }, {
+      method: "self.set",
+      params: {
+        "session.json": {
+          "url": "{{input}}"
+        }
+      }
+    }, {
       method: "notify",
       params: {
         html: "Successfully launched. Go to the dashboard to open the web ui",
-        href: "/"
+        href: "/?selected=Stable Diffusion web UI"
       }
     }, {
       method: "process.wait"

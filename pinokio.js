@@ -21,6 +21,7 @@ module.exports = {
   menu: async (kernel) => {
     let installed = await exists(path.resolve(__dirname, "automatic1111", "venv"))
     if (installed) {
+      let session = (await this.loader.load(path.resolve(__dirname, "session.json"))).resolved
       return [{
         when: "start.js",
         on: "<i class='fa-solid fa-spin fa-circle-notch'></i> Running",
@@ -37,7 +38,7 @@ module.exports = {
       }, {
         when: "start.js",
         on: "<i class='fa-solid fa-rocket'></i> Open Web UI",
-        href: "http://127.0.0.1:7860",
+        href: (session && session.url ? session.url : "http://127.0.0.1:7860"),
         target: "_blank"
 //      }, {
 //        html: "<i class='fa-solid fa-plug'></i> Reinstall",
