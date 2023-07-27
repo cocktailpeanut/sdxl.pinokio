@@ -8,7 +8,8 @@ module.exports = async (kernel) => {
   if (platform === "darwin") {
     setup = [{
       method: "shell.run",
-      params: { message: "brew install cmake protobuf rust python@3.10 git wget", },
+      //params: { message: "brew install cmake protobuf rust python@3.10 git wget", },
+      params: { message: "brew install protobuf rust wget", },
     }, {
       method: "shell.run",
       params: { message: "git clone -b dev https://github.com/AUTOMATIC1111/stable-diffusion-webui automatic1111", path: path.resolve(__dirname) },

@@ -24,13 +24,17 @@ module.exports = async (kernel) => {
         "session.json": {
           "url": "{{input}}"
         }
-      }
-    }, {
-      method: "notify",
-      params: {
-        html: "Successfully launched. Go to the dashboard to open the web ui",
-        href: "/?selected=Stable Diffusion web UI"
-      }
+      }, {
+        method: "browser.open",
+        params: {
+          uri: "/?selected=Stable Diffusion web UI"
+        }
+//    }, {
+//      method: "notify",
+//      params: {
+//        html: "Successfully launched. Go to the dashboard to open the web ui",
+//        href: "/?selected=Stable Diffusion web UI"
+//      }
     }, {
       method: "process.wait"
     }]
