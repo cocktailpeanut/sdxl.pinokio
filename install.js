@@ -43,6 +43,14 @@ module.exports = async (kernel) => {
       "html": "<b>Downloading Model</b><br>Downloading the Stable Diffusion XL 1.0 model..."
     }
   }, {
+    "method": "self.set",
+    "params": {
+      "automatic1111/ui-config.json": {
+        "txt2img/Width/value": 1024,
+        "txt2img/Height/value": 1024,
+      }
+    }
+  }, {
     "method": "fs.download",
     "params": {
       //"url": "https://huggingface.co/snowkidy/stable-diffusion-xl-base-0.9/resolve/main/sd_xl_base_0.9.safetensors",
