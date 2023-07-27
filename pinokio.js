@@ -21,7 +21,7 @@ module.exports = {
   menu: async (kernel) => {
     let installed = await exists(path.resolve(__dirname, "automatic1111", "venv"))
     if (installed) {
-      let session = (await this.loader.load(path.resolve(__dirname, "session.json"))).resolved
+      let session = (await kernel.loader.load(path.resolve(__dirname, "session.json"))).resolved
       return [{
         when: "start.js",
         on: "<i class='fa-solid fa-spin fa-circle-notch'></i> Running",
